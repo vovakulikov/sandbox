@@ -66,7 +66,7 @@ module.exports = {
   // ],
 
   // An array of file extensions your modules use
-  moduleFileExtensions: ["js", "ts"],
+  moduleFileExtensions: ["js", "ts", "tsx"],
 
   // A map from regular expressions to module names that allow to stub out resources with a single module
   // moduleNameMapper: {},
@@ -117,13 +117,13 @@ module.exports = {
 
   // A list of paths to modules that run some code to configure or set up the testing framework before each test
   // You can add here custom-matcher entry points
-  setupFilesAfterEnv: ["jest-extended"],
+  setupFilesAfterEnv: ["jest-extended", "./jest.setup.js"],
 
   // A list of paths to snapshot serializer modules Jest should use for snapshot testing
   // snapshotSerializers: [],
 
   // The test environment that will be used for testing
-  testEnvironment: "node",
+  testEnvironment: "jsdom",
 
   // Options that will be passed to the testEnvironment
   // testEnvironmentOptions: {},
