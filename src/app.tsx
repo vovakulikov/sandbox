@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 
+import styles from './index.css';
+
 export type IProps = {
   enable?: boolean;
 };
@@ -17,7 +19,7 @@ function App (props: IProps) {
   };
   
   return (
-    <div>
+    <div className={styles.element}>
       <h1>Counter is { counter }</h1>
       
       <button onClick={handleInc}>Inc</button>

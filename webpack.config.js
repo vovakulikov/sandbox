@@ -6,10 +6,7 @@ const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
 
 
 module.exports = {
-  entry: {
-    vendor: ['react', 'react-dom'],
-    app: path.resolve(__dirname, './src/index.tsx'),
-  },
+  entry: path.resolve(__dirname, './src/index.tsx'),
   output: {
     path: path.resolve(__dirname, 'dist'), // Note: Physical files are only output by the production build task `npm run build`.
     publicPath: '/',
@@ -49,6 +46,22 @@ module.exports = {
             },
           },
           'sass-loader'
+        ],
+      },
+      {
+        test: /\.css$/i,
+        use: [
+            "style-loader",
+          {
+            loader: 'css-loader',
+            options: {
+              importLoaders: 2,
+              modules: {
+                localIdentName: '[local]--[hash:base64:5]',
+              },
+            },
+          },
+           "postcss-loader"
         ],
       },
     ]
